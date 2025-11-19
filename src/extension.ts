@@ -5,6 +5,7 @@ import { formatClasses } from './formatter';
 import { TailwindHoverProvider } from './hoverProvider';
 import { updateDiagnostics } from './diagnostics';
 import { TailwindFoldingProvider } from './folding';
+import { updateDecorations, clearDecorations } from './decorator';
 
 export function activate(context: vscode.ExtensionContext) {
     console.log('Tailwind Class Organizer is now active!');
@@ -124,6 +125,44 @@ export function activate(context: vscode.ExtensionContext) {
             new TailwindFoldingProvider()
         )
     );
+
+    // Truncation / Decorator
+    let truncationEnabled = true; // Default to true for now, or make it configurable
+    
+    // Initial update
+    if (vscode.window.activeTextEditor) {
+        updateDecorations(vscode.window.activeTextEditor);
+    }
+
+    context.subscriptions.push(
+        vscode.window.onDidChangeTextEditorSelection(event => {
+            if (truncationEnabled && event.textEditor === vscode.window.activeTextEditor) {
+                updateDecorations(event.textEditor);
+            }
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.workspace.onDidChangeTextDocument(event => {
+            if (truncationEnabled && vscode.window.activeTextEditor && event.document === vscode.window.activeTextEditor.document) {
+                updateDecorations(vscode.window.activeTextEditor);
+            }
+        })
+    );
+    
+    // Command to toggle truncation
+    context.subscriptions.push(vscode.commands.registerCommand('tailwind-organizer.toggleTruncation', () => {
+        truncationEnabled = !truncationEnabled;
+        vscode.window.showInformationMessage(`Tailwind Truncation: ${truncationEnabled ? 'ON' : 'OFF'}`);
+        
+        if (vscode.window.activeTextEditor) {
+            if (truncationEnabled) {
+                updateDecorations(vscode.window.activeTextEditor);
+            } else {
+                clearDecorations(vscode.window.activeTextEditor);
+            }
+        }
+    }));
 }
 
 export function deactivate() {}
