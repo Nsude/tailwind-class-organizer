@@ -33,8 +33,9 @@ try {
 
   // Test 4: Formatter
   const input3 = "flex items-center";
-  const formatted = formatClasses(input3, 5); // Low threshold
+  const formatted = formatClasses(input3, 5, "    ", 4); // Low threshold, 4 spaces indent
   assert.ok(formatted.includes('\n'), "Formatter should break lines");
+  assert.ok(formatted.includes('        flex'), "Should have base indent + tab indent");
   console.log("✅ Formatter Test Passed");
 
   console.log("All tests passed successfully!");

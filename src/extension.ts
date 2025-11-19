@@ -57,11 +57,18 @@ export function activate(context: vscode.ExtensionContext) {
         const document = editor.document;
         const fullText = document.getText();
         const attributes = findClassAttributes(fullText);
+        
+        const tabSize = typeof editor.options.tabSize === 'number' ? editor.options.tabSize : 4;
 
         editor.edit(editBuilder => {
             for (let i = attributes.length - 1; i >= 0; i--) {
                 const attr = attributes[i];
-                const formatted = formatClasses(attr.content, threshold);
+                
+                const startPos = document.positionAt(attr.start);
+                const line = document.lineAt(startPos.line);
+                const baseIndent = line.text.substring(0, line.firstNonWhitespaceCharacterIndex);
+
+                const formatted = formatClasses(attr.content, threshold, baseIndent, tabSize);
                 if (formatted !== attr.content) {
                     const range = new vscode.Range(
                         document.positionAt(attr.start),
