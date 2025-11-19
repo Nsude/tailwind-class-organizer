@@ -32,7 +32,7 @@ Detects and warns about:
 - **Duplicates**: Repeated classes in the same attribute.
 
 ### 6. Status Bar Control
-A convenient status bar item (`TW: ...`) gives you quick access to toggle features:
+A convenient status bar item (`Tailwind: ...`) gives you quick access to toggle features:
 - **Auto-Sort**: Enable/Disable sorting on save.
 - **Auto-Multiline**: Enable/Disable formatting on save.
 - **Truncation**: Enable/Disable the auto-hide feature.
