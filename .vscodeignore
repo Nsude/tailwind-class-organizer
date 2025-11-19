@@ -1,0 +1,14 @@
+.vscode/**
+.vscode-test/**
+out/test/**
+src/**
+.gitignore
+.eslintrc.json
+vsc-extension-quickstart.md
+tsconfig.json
+simple-test.js
+test-folding.js
+sort-file.js
+demo.html
+**/*.map
+**/*.ts
