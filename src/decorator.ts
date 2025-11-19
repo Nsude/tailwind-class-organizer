@@ -39,6 +39,12 @@ export function updateDecorations(editor: vscode.TextEditor) {
     attributes.forEach(attr => {
         const startPos = document.positionAt(attr.start);
         const endPos = document.positionAt(attr.end);
+        
+        // Ignore multiline attributes (handled by foldingManager)
+        if (startPos.line !== endPos.line) {
+            return;
+        }
+
         const range = new vscode.Range(startPos, endPos);
 
         // Check if cursor is inside this range

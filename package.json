@@ -33,6 +33,21 @@
           "type": "integer",
           "default": 80,
           "description": "Character limit before breaking classes into multiple lines."
+        },
+        "tailwindOrganizer.enableAutoSort": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically sort classes on save."
+        },
+        "tailwindOrganizer.enableAutoMultiline": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically format classes to multiline on save."
+        },
+        "tailwindOrganizer.enableTruncation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable auto-truncation of class attributes."
         }
       }
     }
