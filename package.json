@@ -2,7 +2,8 @@
   "name": "tailwind-class-organizer",
   "displayName": "Tailwind Class Organizer",
   "description": "Organizes and formats Tailwind CSS classes.",
-  "version": "0.0.1",
+  "icon": "images/tco-icon.png",
+  "version": "0.0.2",
   "publisher": "Meshach",
   "repository": {
     "type": "git",
