@@ -2,6 +2,10 @@
 
 All notable changes to the "Tailwind Class Organizer" extension will be documented in this file.
 
+## [0.0.5] - 2025-12-31
+
+- Updated: Extension description
+
 ## [0.0.4] - 2025-12-31
 
 - Updated: Extension thumbnail image
