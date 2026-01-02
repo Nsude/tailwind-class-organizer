@@ -16,6 +16,25 @@
     "Formatters",
     "Other"
   ],
+  "keywords": [
+    "class grouping",
+    "class sorting",
+    "class hiding",
+    "clean code",
+    "formatter",
+    "pretty",
+    "tailwind",
+    "tailwind organizer",
+    "tailwind css",
+    "tailwindcss",
+    "css",
+    "sort",
+    "organize",
+    "productivity",
+    "vscode-extension",
+    "reorder",
+    "style"
+  ],
   "activationEvents": [
     "onStartupFinished"
   ],
