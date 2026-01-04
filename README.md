@@ -1,8 +1,6 @@
 # Tailwind Class Organizer
 
-<video controls title="Demo Video" width="100%">
-  <source src="https://github.com/user-attachments/assets/fb5e2c1d-9e33-4db7-89f7-ea398be79b71" type="video/mp4">
-</video>
+[![Demo Video](https://img.youtube.com/vi/3NnwywNruOQ/hqdefault.jpg)](https://www.youtube.com/watch?v=3NnwywNruOQ)
 
 **Tailwind Class Organizer** is a sleek VS Code extension designed to tame your Tailwind CSS classes. It helps you keep your code clean, readable, and consistent by automatically sorting, formatting, and hiding class attributes in HTML, JSX, TSX, Vue, and Svelte files.
 
